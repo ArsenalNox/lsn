@@ -14,9 +14,9 @@ double get_user_double_input(){
     string input; //Брать входные данные от пользователя строкой
     double number; //Брать такой тип данных, потом перевести в целое или строку
 
+    int dot_count = 0; //Кол-во точек
     while(1){ //До тех пор пока пользователь не введёт правильное число
         bool is_input_invalid = false; //Неправильный ли ввод
-        int dot_count = 0; //Кол-во точек
 
         cin >> input;
 
@@ -33,20 +33,16 @@ double get_user_double_input(){
                 if (dot_count>1){
                     is_input_invalid = true;
 
-                } if (input.length() == 1){
+                } else if (input.length() == 1){
                     is_input_invalid = true;
 
                 } else {
                     continue;
                 }
-            }
-
-            //Если введён только минус
-            if (input[i] == 45 && i==0){ // "-"
+            } else if (input[i] == 45 && i==0){ // "-"
                 continue;
-            }
 
-            if (!isdigit(input[i])){ //Если символ не является цифрой
+            } else if (!isdigit(input[i])){ //Если символ не является цифрой
                 is_input_invalid = true;
             }
 
@@ -64,4 +60,16 @@ double get_user_double_input(){
         }
     }
     return number;
+}
+
+bool get_user_double_input(std::string in, double& res) {
+    try {
+        size_t read= 0;
+        res = std::stod(in, &read);
+        if (in.size() != read)
+            return false;
+    } catch (std::invalid_argument) {
+        return false;
+    }    
+    return true;
 }

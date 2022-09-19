@@ -1,76 +1,113 @@
 #include <cmath>
+#include <locale>
 #include <math.h>
 #include <string>
 #include <tgmath.h>
 #include <iostream>
-#include "../../libs/utils.cpp"
+#include "../libs/utils.cpp"
 
 using namespace std;
 
 /*
- * Вариант 3. Написать программу, запрашивающую номер месяца и выдающую в ответ
-количество дней в нем (год невисокосный). 
+ * Написать программу, вычисляющую дату, следующую за данной. Дата задается тремя
+числами d, m, y, обозначающими соответственно день, месяц и год.
  */
 
 int main(){
-    int a;
+    int date;
+    int month; 
+    int year;
+
+    int date_new;
+    int month_new;
+    int year_new;
+
+    cout << "Введите число \n";
+    date = int(get_user_double_input());
+
+    cout << "Введите месяц \n";
+    month = int(get_user_double_input());
+
+    cout << "Введите год \n";
+    year = int(get_user_double_input());
+
+    date_new = date;
+    month_new = month;
+    year_new = year;
+
     
-    cout << "Введите номер месяца\n";
-    a = int(get_user_double_input());
+    if (date > 31){
+        cout << "Ошибка";
+        return 1;
+    }
 
-    switch (a) {
+    switch (month) {
         case 1:
-            cout << "31";
-            break;
-
-        case 2:
-            cout << "28";
-            break;
-
         case 3:
-            cout << "31";
+        case 10:
+        case 5:
+        case 6:
+        case 8:
+        case 7:
+            if (date == 31){
+                date_new = 1;
+                month_new++;
+            } else {
+                date_new++;
+            }
             break;
 
         case 4:
-            cout << "30";
-            break;
-
-        case 5:
-            cout << "31";
-            break;
-
-        case 6:
-            cout << "30";
-            break;
-
-        case 7:
-            cout << "31";
-            break;
-
-        case 8:
-            cout << "31";
-            break;
-
         case 9:
-            cout << "30";
-            break;
-
-        case 10:
-            cout << "31";
-            break;
-
         case 11:
-            cout << "30";
+            if (date == 31){
+                date_new = 1;
+                month_new++;
+            } else {
+                date_new++;
+            }
             break;
 
         case 12:
-            cout << "31";
+            if (date == 31){
+                date_new = 1;
+                month_new = 1;
+                year_new++;
+            } else {
+                date_new++;
+            }
+            break;
+
+        case 2:
+            if (!((year % 100 == 0) && !(year % 400 == 0))
+                    &&
+                    (year % 4 == 0)
+                ){
+                if (date == 29){
+                    month_new++;
+                    date_new = 1;
+                } else {
+                    date++;
+                }
+            } else {
+                if (date == 28){
+                    month_new++;
+                    date_new = 1;
+                } else {
+                    date++;
+                }
+            }
+
             break;
 
         default:
-            cout << "Неизвестный месяц";
             break;
     }
+        
+    cout << "d: " << date_new << " m: " << month_new << " y: " << year_new << "\n";
+
 
     cout << "" << "\n";
+
+    return 1;
 }

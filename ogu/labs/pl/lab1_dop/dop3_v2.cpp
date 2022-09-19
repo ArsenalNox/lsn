@@ -1,9 +1,4 @@
-#include <cmath>
-#include <math.h>
-#include <string>
-#include <tgmath.h>
 #include <iostream>
-#include <type_traits>
 #include "../libs/utils.cpp"
 
 using namespace std;
@@ -18,8 +13,19 @@ int main(){
     int result; 
 
     cout << "Введите число\n";
-    a = get_user_double_input();
-    
+
+    string input;
+    cin >> input;
+
+    bool valid = get_user_double_input(input, a);
+    if (valid){
+        cout << "Valid number\n";
+    } else {
+        cout << "Invalid number\n"; 
+        return 1;
+    }
+
+
     result = (int(a*1000) / 10) % 10;
 
     cout << result << "\n";

@@ -1,9 +1,4 @@
-#include <cmath>
-#include <math.h>
-#include <string>
-#include <tgmath.h>
 #include <iostream>
-#include <type_traits>
 #include "../libs/utils.cpp"
 
 using namespace std;
@@ -24,7 +19,9 @@ int main(){
     
     cout << "Значение A: " << a << " Значение B: " << b << "\n";
     
-    swap(a,b);
-    
+    a = a*b;
+    b = a/b;
+    a = a/b;
+
     cout << "Значение A: " << a << " Значение B: " << b << "\n";
 }

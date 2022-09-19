@@ -14,7 +14,17 @@ int main(){
 
     cout << "Enter amount of USD you wish to convert to RUB:\n";
 
-    double number = get_user_double_input();
+    double number;
+    string input;
+    cin >> input;
+
+    bool valid = get_user_double_input(input, number);
+    if (valid){
+        cout << "Valid number\n";
+    } else {
+        cout << "Invalid number\n"; 
+        return 1;
+    }
 
     double d = 1.53; //1 USD = 1.53 RUB 
 

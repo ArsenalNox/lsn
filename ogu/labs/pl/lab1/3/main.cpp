@@ -19,8 +19,7 @@ int main(){
         inputs[i] = get_user_double_input();
     }
 
-    double d;
-    d = inputs[0] * inputs[1] * inputs[2];
+    double d = inputs[0] * inputs[1] * inputs[2];
     
     cout << "Resulting volume is: " << d << "\n";
 
