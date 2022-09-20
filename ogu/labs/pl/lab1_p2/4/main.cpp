@@ -1,6 +1,3 @@
-#include <cmath>
-#include <math.h>
-#include <tgmath.h>
 #include <iostream>
 #include "../../libs/utils.cpp"
 
