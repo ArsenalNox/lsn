@@ -10,11 +10,11 @@ using namespace std;
  */
 
 int main(){
-    int range; 
+    int range = 0; 
 
     cout << "Введите диапазон\n";
     cin >> range;
-    int numbers[range];
+    int *numbers = new int[range];
 
     for (int i = 0; i < range; i++){
         cout << "Введите число " << i+1 << ": ";
@@ -33,5 +33,5 @@ int main(){
 
     cout << "Сумма элементов: " << sum << endl;
         
-    return 1;
+    return 0;
 }

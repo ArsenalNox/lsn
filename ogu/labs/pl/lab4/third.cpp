@@ -1,8 +1,3 @@
-#include <bits/types/timer_t.h>
-#include <cmath>
-#include <math.h>
-#include <string>
-#include <tgmath.h>
 #include <iostream>
 #include "../libs/utils.cpp"
 
@@ -21,7 +16,7 @@ int main(){
     for (int i = 1; i<range+1; i++){
         cout << "Число " << i << " делится нацело на: ";
         for (int j = 1; j<i; j++){
-            if (i%j==0){
+            if (i % j==0){
                 cout << j << " ";
             }
         }

@@ -16,7 +16,7 @@ int main(){
 
     cout << "Введите диапазон\n";
     cin >> range;
-    int numbers[range];
+    int *numbers = new int[range];
 
     random_device dev;
     mt19937 rng(dev());
@@ -45,5 +45,5 @@ int main(){
 
     cout << "Наибольший элемент " << biggest_index << ": " << biggest << endl;
         
-    return 1;
+    return 0;
 }

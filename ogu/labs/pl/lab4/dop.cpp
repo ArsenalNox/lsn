@@ -16,7 +16,7 @@ int main(){
     cout << "Введите количество статей\n";
     cin >> range;
 
-    int publications[range];
+    int *publications = new int[range];
 
     for (int i = 0; i < range; i++){
         cout << "Количество цитирований статьи " << i+1 << endl;
