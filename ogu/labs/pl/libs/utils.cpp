@@ -62,13 +62,13 @@ double get_user_double_input(){
     return number;
 }
 
-bool get_user_double_input(std::string in, double& res) {
+bool get_user_double_input(string in, double& res) {
     try {
-        size_t read= 0;
-        res = std::stod(in, &read);
+        size_t read = 0;
+        res = stod(in, &read);
         if (in.size() != read)
             return false;
-    } catch (std::invalid_argument) {
+    } catch (invalid_argument) {
         return false;
     }    
     return true;
