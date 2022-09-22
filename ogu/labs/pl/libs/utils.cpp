@@ -20,7 +20,7 @@ double get_user_double_input(){
 
         cin >> input;
 
-        for (int i = 0; i < input.length(); i++){
+        for (long long unsigned int i = 0; i < input.length(); i++){
 
             if (input[i] == 46 || input[i] == 44){ //Если вводится точка или запятая
                 //BUG: Если вводить именно запятую, в доп задаче 3 неправильно определяется 
@@ -65,7 +65,7 @@ double get_user_double_input(){
 bool get_user_double_input(string in, double& res) {
     try {
         size_t read = 0;
-        res = stod(in, &read);
+        res = std::stod(in, &read);
         if (in.size() != read)
             return false;
     } catch (invalid_argument) {

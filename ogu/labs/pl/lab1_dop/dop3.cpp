@@ -18,7 +18,7 @@ int main(){
 
     cout << "Введите число\n";
     a = to_string(get_user_double_input());
-    
+    cout << endl << a << endl;
     for (int i = 0; i < a.length(); i++){
         if ( a[i] == 46 || a[i] == 44 ){
             cout << a[i+2] << "\n";
