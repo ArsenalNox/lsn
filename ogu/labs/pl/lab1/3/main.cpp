@@ -12,16 +12,16 @@ using namespace std;
 
 int main(){
     double inputs[3];
-    string labels[3] = {"A", "B", "C"};
+    char labels[3] = {'A', 'B', 'C'};
     
     for (int i = 0; i<3; i++) {
         cout << "Введите ребро " << labels[i] << '\n';
         inputs[i] = get_user_double_input();
     }
 
-    double d = inputs[0] * inputs[1] * inputs[2];
+    double v = inputs[0] * inputs[1] * inputs[2];
     
-    cout << "Resulting volume is: " << d << "\n";
+    cout << "Итоговый объём: " << v << "\n";
 
     return 0;
 }

@@ -13,7 +13,9 @@ using namespace std;
 
 int main(){
     int range = 0; 
+
     const int LOCAL_RAND_MAX = 1000000;
+
     random_device dev;
     mt19937 rng(dev());
     uniform_int_distribution<mt19937::result_type> dist6(1, LOCAL_RAND_MAX);
@@ -43,7 +45,7 @@ int main(){
     double product = 1;
 
     for (int i = 0; i < range; i++){
-        numbers[i] = (-LOCAL_RAND_MAX/2+(double)dist6(rng))/100.0;
+        numbers[i] = (-LOCAL_RAND_MAX/2.0+(double)dist6(rng))/100.0;
 
         cout << "Элемент " << i+1 << ": " << numbers[i] << endl;
 

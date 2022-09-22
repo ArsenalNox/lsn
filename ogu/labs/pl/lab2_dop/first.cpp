@@ -37,10 +37,6 @@ class Triangle {
 int main(){
     double input_x;
     double input_y;
-    double area_orig;
-    double area1;
-    double area2;
-    double area3;
 
     Triangle triangle;
 
@@ -72,25 +68,25 @@ int main(){
     input_y = get_user_double_input();
 
         
-    area_orig = area(
+    double area_orig = area(
             triangle.x1, triangle.y1,
             triangle.x2, triangle.y2,
             triangle.x3, triangle.y3
             );
 
-    area1 = area(
+    double area1 = area(
             input_x, input_y,
             triangle.x2, triangle.y2,
             triangle.x3, triangle.y3
             );
 
-    area2 = area(
+    double area2 = area(
             triangle.x1, triangle.y1,
             input_x, input_y,
             triangle.x3, triangle.y3
             );
 
-    area3 = area(
+    double area3 = area(
             triangle.x1, triangle.y1,
             triangle.x2, triangle.y2,
             input_x, input_y
