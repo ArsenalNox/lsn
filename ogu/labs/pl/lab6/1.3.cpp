@@ -1,5 +1,4 @@
 #include <iostream>
-#include "../libs/utils.cpp"
 #include <random>
 
 using namespace std;
@@ -14,11 +13,9 @@ using namespace std;
 int main(){
     int range = 0; 
 
-    const int LOCAL_RAND_MAX = 1000000;
-
-    random_device dev;
-    mt19937 rng(dev());
-    uniform_int_distribution<mt19937::result_type> dist6(1, LOCAL_RAND_MAX);
+    std::random_device rd;     // Only used once to initialise (seed) engine
+    std::mt19937 rng(rd());    // Random-number engine used (Mersenne-Twister in this case)
+    std::uniform_int_distribution<int> uni(-10000,10000); // Guaranteed unbiased
 
     cout << "Введите количество элементов\n";
     cin >> range;
@@ -45,7 +42,7 @@ int main(){
     double product = 1;
 
     for (int i = 0; i < range; i++){
-        numbers[i] = (-LOCAL_RAND_MAX/2.0+(double)dist6(rng))/100.0;
+        numbers[i] = uni(rng)/10.0;
 
         cout << "Элемент " << i+1 << ": " << numbers[i] << endl;
 
