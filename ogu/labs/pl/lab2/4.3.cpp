@@ -25,16 +25,12 @@ int main(){
     cout << "Введите число C\n";
     c = get_user_double_input();
 
-    if (a>b && a>c){
-        cout << "A Наибольшее";
-    } else if (b>a && b>c) {
-        cout << "B Наибольшее";
-    } else if (c>a && c>b) {
-        cout << "C Наибольшее";
-    }
-
-    if (a == b && b == c){
-        cout << "Числа равны";
+    if (a <= b && a <= c){
+        cout << a << " наименьшее" << endl;
+    } else if (b <= a && b <= c) {
+        cout << b << " наименьшее" << endl;
+    } else {
+        cout << c << " наименьшее" << endl;
     }
 
     cout << "" << "\n";

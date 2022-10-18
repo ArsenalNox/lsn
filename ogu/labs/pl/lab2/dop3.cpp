@@ -1,8 +1,3 @@
-#include <cmath>
-#include <locale>
-#include <math.h>
-#include <string>
-#include <tgmath.h>
 #include <iostream>
 #include "../libs/utils.cpp"
 
@@ -36,7 +31,12 @@ int main(){
     year_new = year;
 
     
-    if (date > 31){
+    if (date > 31 || date < 1){
+        cout << "Ошибка";
+        return 1;
+    }
+
+    if (month > 12 || month < 1){
         cout << "Ошибка";
         return 1;
     }

@@ -1,8 +1,3 @@
-#include <bits/types/timer_t.h>
-#include <cmath>
-#include <math.h>
-#include <string>
-#include <tgmath.h>
 #include <iostream>
 #include "../libs/utils.cpp"
 
@@ -31,5 +26,5 @@ int main(){
 
     cout << "Результат: " << s << "\n";
 
-    return 1;
+    return 0;
 }
