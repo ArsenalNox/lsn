@@ -11,6 +11,7 @@ using namespace std;
 int main(){
     double a;
     int result; 
+    while(1){
 
     cout << "Введите число\n";
 
@@ -29,4 +30,5 @@ int main(){
     result = (int(a*1000) / 10) % 10;
 
     cout << result << "\n";
+    }
 }

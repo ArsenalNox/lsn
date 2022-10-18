@@ -60,7 +60,7 @@ int main(){
         case 4:
         case 9:
         case 11:
-            if (date == 31){
+            if (date == 30){
                 date_new = 1;
                 month_new++;
             } else {
